@@ -16,12 +16,13 @@ def getBubbleNum(array):
     return result
 
 def getVerticalInvariants(matrix):
-    print("Matrix", matrix, [len(l) for l in matrix])
     result = [[] for i in range(len(matrix[0]))]
     for l in matrix:
         for index, s in enumerate(l):
             result[index].append(s)
-    #print(result)
-    print('BUBLZ', [getBubbleNum(r) for r in result])
+    rawBublz = [getBubbleNum(r) for r in result]
+    stacked = [x for i, x in enumerate(rawBublz) if i == 0 or x != rawBublz[i-1]]
+    return stacked
+
 
 

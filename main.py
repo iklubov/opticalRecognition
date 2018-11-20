@@ -35,5 +35,6 @@ counter = 0
 for filename in os.listdir(path):
     f = open(path + '/' + filename, 'r')
     matrix = transfromString(f)
+    print('MATRIX', matrix)
     verticalBublz = getVerticalInvariants(matrix)
     print('VERTICAL BUBLZ', verticalBublz)
