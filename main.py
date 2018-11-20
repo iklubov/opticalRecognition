@@ -1,7 +1,7 @@
 import os
 
 from constants import path, SYMBOL
-from invariants import getVerticalInvariants
+from invariants import getVerticalInvariants, getHorizontalInvariants
 
 
 def transfromString(f):
@@ -38,3 +38,5 @@ for filename in os.listdir(path):
     print('MATRIX', matrix)
     verticalBublz = getVerticalInvariants(matrix)
     print('VERTICAL BUBLZ', verticalBublz)
+    horizBublz = getHorizontalInvariants(matrix)
+    print('HORIZ BUBLZ', horizBublz)

@@ -1,5 +1,5 @@
 # utils
-from constants import SYMBOL
+from constants import SYMBOL, MAX_STACKED
 
 
 def getBubbleNum(array):
@@ -22,6 +22,13 @@ def getVerticalInvariants(matrix):
             result[index].append(s)
     rawBublz = [getBubbleNum(r) for r in result]
     stacked = [x for i, x in enumerate(rawBublz) if i == 0 or x != rawBublz[i-1]]
+    stacked.extend([0]*(MAX_STACKED - len(stacked)))
+    return stacked
+
+def getHorizontalInvariants(matrix):
+    rawBublz = [getBubbleNum(l) for l in matrix]
+    stacked = [x for i, x in enumerate(rawBublz) if i == 0 or x != rawBublz[i-1]]
+    stacked.extend([0]*(MAX_STACKED - len(stacked)))
     return stacked
 
 
